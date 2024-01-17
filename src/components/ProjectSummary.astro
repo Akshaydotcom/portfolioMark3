@@ -1,0 +1,39 @@
+---
+import rps from '../images/rockpaperscissors.agigabyte.com_.png'
+import stu from '../images/agigabyte-urlshortener.netlify.app_.png'
+import cfinder from '../images/cfinder.png'
+import link from '../icons/link.svg'
+import github from '../icons/github.svg'
+import { Image } from 'astro:assets'
+const {projectName, projectSummary, liveLink, githubLink, iconFor, number}=Astro.props
+const flag=number%2==0
+const imageMap={
+    'rps':rps,
+    'cfinder':cfinder,
+    'stu':stu
+}
+
+---
+
+<div class:list={["py-5","flex","gap-12 text-white",{"flex-row-reverse":flag}]}>
+    <div class="flex justify-self-center self-center p-8 border border-white hover:p-2">
+        <Image src={imageMap[iconFor]} alt="" class="h-[14rem] w-[28rem] hover:h-[18rem] hover:w-[32rem]"/>
+    </div>
+    <div class="w-1/2">
+        <p class="text-5xl font-extrabold">{String(number).padStart(2,'0')}</p>
+        <p class="text-3xl py-8">{projectName}</p>
+        <p class="text-xl text-[#71717A]">{projectSummary}</p>
+        <span class="inline-flex pt-2">
+            <a href={liveLink} target="_blank" class="pr-4"><Image src={link} alt="" class='invert'/></a>
+            <a href={githubLink} target="_blank"><Image src={github} alt="" class='invert'/></a>
+        </span>
+        
+    </div>
+</div>
+
+<style>
+    img.invert{
+        filter: invert(100%) !important;
+    background-color: white !important; 
+    }
+</style>

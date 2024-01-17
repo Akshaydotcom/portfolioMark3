@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import js from '../icons/js.svg'
+import html from '../icons/html5.svg'
+import email from '../icons/email.svg'
+import css from '../icons/css3-alt.svg'
+import react from '../icons/react.svg'
+import python from '../icons/python.svg'
+import linkedin from '../icons/linkedin.svg'
+import github from '../icons/github.svg'
+import redux from '../icons/redux.svg'
+import tailwind from '../icons/tailwind.svg'
+import graphQL from '../icons/graphql.svg'
+const {iconFor}=Astro.props
+const iconMapping={
+    'javascript':js,
+    'html':html,
+    'css':css,
+    'react':react,
+    'python':python,
+    'linkedin':linkedin,
+    'email':email,
+    'github':github,
+    'redux':redux,
+    'tailwind':tailwind,
+    'graphQL':graphQL
+}
+
+---
+
+<div class="px-6 border-2 border-black py-6 flex flex-col items-center w-36 text-black hover:bg-black hover:border-white hover:text-white invert-color" >
+    <Image src={iconMapping[iconFor]} alt="icons"  class="h-14 w-14 "/>
+    {iconFor.charAt(0).toUpperCase()+iconFor.slice(1)}
+</div>
+
+<style>
+    .invert-color:hover img{
+    filter: invert(100%) !important;
+    background-color: white !important; 
+    
+}
+
+</style>

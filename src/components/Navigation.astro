@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets'
+import image1 from '../images/p2.png'
+---
+<ul class="navbar flex items-center justify-between mx-20 my-6 px-8">
+    <li class=""><Image src={image1} alt="" width={image1.width/10}/></li>
+    <li class=""><a href="#aboutMe">About Me</a></li>
+    <li class=""><a href="#skills">Skills</a></li>
+    <li class=""><a href="#Projects">Projects</a></li>
+    <li class=""><a href="#blog">Blog</a></li>
+    <li class=""><a href="#contact">Contact Me</a></li>
+    <button>Resume</button>
+</ul>
+
+<style>
+    .navbar{
+        list-style-type:none;
+    }
+
+</style>

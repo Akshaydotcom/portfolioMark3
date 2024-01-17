@@ -1,0 +1,21 @@
+---
+import infy from '../icons/infosys.svg'
+import chera from '../images/chera2.png'
+import { Image } from 'astro:assets'
+const {companyName, desc, title, startDate, endDate, iconFor}=Astro.props
+const iconMap={
+    'infosys':infy,
+    'chera':chera
+}
+---
+
+<div class="py-6 px-7 border border-white rounded-lg text-white my-8">
+    <div class="flex justify-between text-2xl">
+        <span class="inline-flex">
+            <Image src={iconMap[iconFor]} alt="logo" class="h-8 w-8 mr-2"/> 
+            {title} at {companyName}
+        </span> 
+        <span>{startDate}-{endDate}</span>
+    </div>
+    <p class="pt-6 text-base">{desc}</p>
+</div>
