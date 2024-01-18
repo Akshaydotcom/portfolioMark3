@@ -1,0 +1,20 @@
+---
+import BlogCard from "../components/BlogCard.astro"
+import Navigation from "../components/Navigation.astro"
+import Footer from "../components/Footer.astro"
+---
+
+<Navigation />
+<header class="text-5xl flex justify-center px-20 py-12">
+    My Blog Posts
+</header>
+<div class="flex justify-start px-20 pt-6 pb-12">
+    <input type="text" name="search" id="search" placeholder="Enter Keyword Here to Filter" class="w-56 p-2 border border-2 border-black">
+</div>
+</div>
+<div class="grid grid-cols-4 gap-4 px-20 pb-12">
+    {[1,2,3,4,5,6,7,8,9].map(()=>{
+        return <BlogCard />
+    })}
+</div>
+<Footer />

@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import image1 from '../images/p2.png'
+import download from '../icons/download.svg'
 ---
 <ul class="navbar flex items-center justify-between mx-20 my-6 px-8">
     <li class=""><Image src={image1} alt="" width={image1.width/10}/></li>
@@ -9,12 +10,17 @@ import image1 from '../images/p2.png'
     <li class=""><a href="#Projects">Projects</a></li>
     <li class=""><a href="#blog">Blog</a></li>
     <li class=""><a href="#contact">Contact Me</a></li>
-    <button>Resume</button>
+    <button class="py-4 px-5 bg-black rounded text-white flex">Resume <Image src={download} alt=""/></button>
 </ul>
 
 <style>
     .navbar{
         list-style-type:none;
+    }
+
+    img{
+        filter: invert(100%) !important;
+        margin-left:5px;
     }
 
 </style>

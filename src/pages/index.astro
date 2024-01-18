@@ -1,15 +1,15 @@
 ---
 import Navigation from '../components/Navigation.astro'
 import { Image } from 'astro:assets';
-import image2 from '../images/p2.png'
 import image3 from '../images/DALL·E 2024-01-08 22.19.02 - Create a minimalist black and white digital illustration of a person sitting cross-legged on a cushion. The person is focused on working on a modern l.png'
 import image4 from '../images/DALL·E 2024-01-08 22.19.23 - Create a minimalist black and white digital illustration of a person sitting cross-legged on a cushion. The person is focused on working on a modern l.png'
 import IconButton from '../components/IconButton.astro';
 import JobSummary from '../components/JobSummary.astro';
 import ProjectSummary from '../components/ProjectSummary.astro';
-import BlogCard from '../components/BlogCard.astro'
+import BlogCard from '../components/BlogCard.astro';
+import Footer from '../components/Footer.astro';
 const rps="This project is a modern-day version of the classic game Rock Paper Scissors with exciting twists. Built with React and Vanilla CSS, it allows players to view the history of all choices and is fully compatible with both desktop browsers and mobile devices. One of its notable features is the Pro mode, designed for fans of the hit TV Show The Big Bang Theory. With surprises and a sleek design, this game is sure to provide hours of fun for players of all ages."
-
+const stu ="This is a sleek and user-friendly web application designed to provide quick and efficient URL shortening services. Built as a challenge from FrontendMentor, this project showcases a modern, responsive design achieved using React and the powerful Material-UI framework. The application not only shortens long URLs to make them more manageable but also ensures optimal user experience with its intuitive interface and immediate feedback system. Users can shorten any URL and track their usage, fostering a more convenient and efficient browsing experience."
 const cfinder="This is a web application that provides users with information about all countries in the world. It utilizes the rest-countries API to fetch data and allows users to search and filter countries based on various criteria such as region, language. The application has a user-friendly interface that is optimized for mobile devices and features a dark and light mode for visual customization. The UI is styled using CSS and Bootstrap, while Google Fonts is used to enhance the typography of the application."
 const projectObject=[
 	{
@@ -31,6 +31,13 @@ const projectObject=[
 		iconFor:'stu',
 		githubLink:'https://github.com/Akshaydotcom/url-shortening-api',
 		liveLink:'https://agigabyte-urlshortener.netlify.app',
+		summary:stu
+	},
+	{
+		name:'Portfolio v1',
+		iconFor:'portfolio_v1',
+		githubLink:'https://github.com/Akshaydotcom/portfolio',
+		liveLink:'https://agigabyte.com/',
 		summary:''
 	}
 ]
@@ -50,18 +57,16 @@ const infy='At Infosys, I led the design and implementation of an investment por
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Sora&display=swap" rel="stylesheet">
-		<title>Astro</title>
+		<title>Portfolio-Akshay Bhandary</title>
 	</head>
 	<body>
 		<Navigation />
 		<section class="grid gap-16 grid-cols-2 px-20 py-16">
 			<div class="px-8">
 				<p class="text-5xl leading-[56px] font-thin">Hello, I'm <span class="font-extrabold">Akshay Bhandary.</span> Frontend Developer Based in USA</p>
-				<p>Loren Ipsum</p>
 				<div class="inline-flex">
 					
 				</div>
-				
 			</div>
 			<div class="px-8">
 				<Image src={image4} alt=''/>
@@ -127,7 +132,7 @@ const infy='At Infosys, I led the design and implementation of an investment por
 		<section class="px-20 py-16" id="contact">
 			<div class="grid grid-cols-2 gap-8 pt-12">
 				<div>
-					<form class="block" name="contact" method="POST" data-netlify="true">
+					<form  name="contact" method="POST" data-netlify="true" class="block">
 						<input type="text" id="name" name="name" placeholder="Your name" class="block border border-black border-2 mx-4 my-5 w-[35rem] px-6 py-4"/>
 						<input type="email" id="email" name="email" placeholder="Email" class="block border border-black border-2 mx-4 mb-5 w-[35rem] px-6 py-4"/>
 						<input type="text" id="website" name="website" placeholder="Your website (If exists)" class="block border border-black border-2 mx-4 mb-5 w-[35rem] px-6 py-4"/>
@@ -143,16 +148,7 @@ const infy='At Infosys, I led the design and implementation of an investment por
 			</div>
 			
 		</section>
-		<footer class="bg-black text-white px-20 py-4">
-			<div class="flex justify-between">
-				<div><Image src={image2} alt="" class="invert-color h-10 w-10"/></div>
-				<pre>
-					@ 2023-2024 Personal
-					Made with Astro.js
-				</pre>
-			</div>
-			
-		</footer>
+		<Footer />
 	</body>
 </html>
 
