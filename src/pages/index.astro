@@ -8,6 +8,7 @@ import JobSummary from '../components/JobSummary.astro';
 import ProjectSummary from '../components/ProjectSummary.astro';
 import BlogCard from '../components/BlogCard.astro';
 import Footer from '../components/Footer.astro';
+import MobileNavigation from '../components/MobileNavigation.astro';
 const rps="This project is a modern-day version of the classic game Rock Paper Scissors with exciting twists. Built with React and Vanilla CSS, it allows players to view the history of all choices and is fully compatible with both desktop browsers and mobile devices. One of its notable features is the Pro mode, designed for fans of the hit TV Show The Big Bang Theory. With surprises and a sleek design, this game is sure to provide hours of fun for players of all ages."
 const stu ="This is a sleek and user-friendly web application designed to provide quick and efficient URL shortening services. Built as a challenge from FrontendMentor, this project showcases a modern, responsive design achieved using React and the powerful Material-UI framework. The application not only shortens long URLs to make them more manageable but also ensures optimal user experience with its intuitive interface and immediate feedback system. Users can shorten any URL and track their usage, fostering a more convenient and efficient browsing experience."
 const cfinder="This is a web application that provides users with information about all countries in the world. It utilizes the rest-countries API to fetch data and allows users to search and filter countries based on various criteria such as region, language. The application has a user-friendly interface that is optimized for mobile devices and features a dark and light mode for visual customization. The UI is styled using CSS and Bootstrap, while Google Fonts is used to enhance the typography of the application."
@@ -60,8 +61,11 @@ const infy='At Infosys, I led the design and implementation of an investment por
 		<title>Portfolio-Akshay Bhandary</title>
 	</head>
 	<body>
-		<Navigation />
-		<section class="grid gap-16 grid-cols-2 px-20 py-16">
+		
+		<!--  -->
+		<Navigation/>
+		<MobileNavigation />
+		<section class="lg:grid lg:gap-16 lg:grid-cols-2 lg:px-20 lg:py-16 md:flex md:flex-row sm:flex sm:flex-row-reverse">
 			<div class="px-8">
 				<p class="text-5xl leading-[56px] font-thin">Hello, I'm <span class="font-extrabold">Akshay Bhandary.</span> Frontend Developer Based in USA</p>
 				<div class="inline-flex">
@@ -72,10 +76,10 @@ const infy='At Infosys, I led the design and implementation of an investment por
 				<Image src={image4} alt=''/>
 			</div>
 		</section>
-		<section class="px-20 py-12" id="skills">
-			<header class="text-5xl py-4 flex justify-center">My <span class="font-extrabold pl-2">Skills</span></header>
-			<div class="px-8 py-16">
-				<ul class="grid gap-8 grid-cols-6">
+		<section class="md:px-20 py-12" id="skills">
+			<header class="lg:text-5xl md:text-2xl py-4 flex justify-center">My <span class="font-extrabold pl-2">Skills</span></header>
+			<div class="px-4 md:px-8 py-16">
+				<ul class="grid gap-2 grid-cols-2 xl:grid xl:gap-8 xl:grid-cols-6 lg:grid lg:gap-8 lg:grid-cols-5 md:grid md:gap-4 md:grid-cols-3">
 					<IconButton iconFor="javascript"/>
 					<IconButton iconFor="react"/>
 					<IconButton iconFor="html"/>
@@ -87,13 +91,13 @@ const infy='At Infosys, I led the design and implementation of an investment por
 				</ul>
 			</div>
 		</section>
-		<section class="bg-black px-20 py-16">
+		<section class="px-4 bg-black md:px-20 py-16">
 			<header class="text-white text-5xl py-4 flex justify-center">My Experience</header>
 			<JobSummary companyName="Chera Health LLC" title="Software Engineer Intern" startDate="July 2023" endDate="Sept 2023" desc={chera} iconFor="chera"/>
 			<JobSummary companyName="Infosys" title="Front-End Developer" startDate="June 2018" endDate="Dec 2021" desc={infy} iconFor="infosys"/>
 		</section>
-		<section class="px-20 py-16" id="aboutMe">
-			<div class="grid gap-4 grid-cols-2">
+		<section class="px-4 md:px-20 py-16" id="aboutMe">
+			<div class="flex flex-col md:grid md:gap-4 md:grid-cols-2">
 				<div class="ml-8">
 					<Image src={image3} alt='' height={image3.height/3.5} width={image3.width/2}/>
 				</div>
@@ -108,8 +112,8 @@ const infy='At Infosys, I led the design and implementation of an investment por
 				</div>
 			</div>
 		</section>
-		<section class="bg-black px-20 py-16" id="Projects">
-			<header class="text-5xl py-4 flex justify-center text-white">My Projects</header>
+		<section class="bg-black px-4 md:px-20 py-16" id="Projects">
+			<header class="md:text-5xl py-4 flex justify-center text-white">My Projects</header>
 			{
 				projectObject.map((project, index)=>{
 					return <ProjectSummary projectName={project.name} projectSummary={project.summary} iconFor={project.iconFor} number={index+1} liveLink={project.liveLink} githubLink={project.githubLink}/>
@@ -117,10 +121,10 @@ const infy='At Infosys, I led the design and implementation of an investment por
 			}
 			<div><a href="">Archived Projects</a></div>
 		</section>
-		<section class="px-20 py-16" id="blog">
-			<header class="text-5xl py-4 flex justify-center">My Blog Posts</header>
-			<div class="flex gap-8 justify-evenly py-16">
-				{[1,2,3].map(()=>{
+		<section class="px-4 md:px-20 py-16" id="blog">
+			<header class="text-5xl py-4 flex flex-col md:flex-row md:justify-center">My Blog Posts</header>
+			<div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 md:gap-8 md:justify-evenly py-16">
+				{[1,2,3,4,5].map(()=>{
 					return <BlogCard />
 				})}
 			</div>
@@ -129,21 +133,21 @@ const infy='At Infosys, I led the design and implementation of an investment por
 				<a href="/BlogMain" target="_blank">View All</a>
 			</div>
 		</section>
-		<section class="px-20 py-16" id="contact">
-			<div class="grid grid-cols-2 gap-8 pt-12">
+		<section class="px-4 md:px-20 py-16" id="contact">
+			<div class="flex flex-col-reverse lg:grid lg:grid-cols-2 lg:gap-8 pt-12">
 				<div>
 					<form  name="contact" method="POST" data-netlify="true" class="block">
-						<input type="text" id="name" name="name" placeholder="Your name" class="block border border-black border-2 mx-4 my-5 w-[35rem] px-6 py-4"/>
-						<input type="email" id="email" name="email" placeholder="Email" class="block border border-black border-2 mx-4 mb-5 w-[35rem] px-6 py-4"/>
-						<input type="text" id="website" name="website" placeholder="Your website (If exists)" class="block border border-black border-2 mx-4 mb-5 w-[35rem] px-6 py-4"/>
-						<textarea rows="4" id="message" name="message" placeholder="How can I help?" class="block border border-black border-2 mx-4 mb-5 w-[35rem] px-6 py-4"/>
+						<input type="text" id="name" name="name" placeholder="Your name" class="block border border-black border-2 mx-4 my-5 w-3/4 lg:w-[25rem] xl:w-[30rem] px-6 py-4"/>
+						<input type="email" id="email" name="email" placeholder="Email" class="block border border-black border-2 mx-4 mb-5 w-3/4 lg:w-[25rem] xl:w-[30rem] px-6 py-4"/>
+						<input type="text" id="website" name="website" placeholder="Your website (If exists)" class="block border border-black border-2 mx-4 mb-5 w-3/4 lg:w-[25rem] xl:w-[30rem] px-6 py-4"/>
+						<textarea rows="4" id="message" name="message" placeholder="How can I help?" class="block border border-black border-2 mx-4 mb-5 w-3/4 lg:w-[25rem] xl:w-[30rem] px-6 py-4"/>
 						<button type="submit" class="bg-black text-white px-6 py-4 mx-4 text-xl">Get in touch</button>
 					</form>
 				</div>
 				<div class="py-4 block">
-					<span class="block text-5xl py-4">Let's talk for something special</span>
-					<span class="block text-2xl py-8">akshaybhandaryg1@gmail.com</span>
-					<span class="block text-2xl">408-646-2891</span>
+					<span class="block text-2xl md:text-5xl py-4">Lets Collab?</span>
+					<span class="block text-xl md:text-2xl py-8">akshaybhandaryg1@gmail.com</span>
+					<span class="block text-xl md:text-2xl">408-646-2891</span>
 				</div>
 			</div>
 			
@@ -163,3 +167,7 @@ const infy='At Infosys, I led the design and implementation of an investment por
     background-color: white !important; 
 	}
 </style>
+
+<script>
+	import '../scripts/script.js'
+</script>

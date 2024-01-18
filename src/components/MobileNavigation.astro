@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets"
+import image1 from '../images/p2.png'
+import download from '../icons/download.svg'
+---
+
+<div class="flex justify-end mx-4 mt-5" id="mobile-nav">
+    <div class="hamburger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </div>
+</div>
+
+<div id="mobile-menu" class="hidden h-screen w-screen flex justify-center overflow-hidden">
+    <ul>
+    <li class="py-6 px-12"><Image src={image1} alt="" width={image1.width/10}/></li>
+    <li class="py-6 px-12"><a href="#aboutMe">About Me</a></li>
+    <li class="py-6 px-12"><a href="#skills">Skills</a></li>
+    <li class="py-6 px-12"><a href="#Projects">Projects</a></li>
+    <li class="py-6 px-12"><a href="#blog">Blog</a></li>
+    <li class="py-6 px-12"><a href="#contact">Contact Me</a></li>
+    <button class="py-4 my-2  mx-6 px-5 bg-black rounded text-white flex">Resume <Image src={download} alt="" class="mx-2 invert-color"/></button>
+    </ul>
+</div>
+
+<style>
+    .hamburger {
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 10px;
+  background-color: #1c1c1c;
+}
+
+img.invert-color{
+		filter: invert(100%) !important;
+    background-color: white !important; 
+	}
+</style>
