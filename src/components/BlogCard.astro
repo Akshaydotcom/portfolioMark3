@@ -1,22 +1,22 @@
 ---
 import { Image } from "astro:assets";
 import icon from '../images/Ellipse 2664.svg'
-const {frontmatter}=Astro.props
-const tags=['Javascript','html','css3','react']
+const {frontmatter, url}=Astro.props
 ---
 
 <div class="p-4 my-2 mx-4 md:p-8 lg:p-12 border-black border-2  hover:bg-black hover:rounded-lg hover:text-white">
-    <a href="/posts/BlogPost1/">
+    <a href={url}>
         <div class="grid grid-rows-3 gap-4">
             <div class="flex justify-center">
                 <Image src={icon} alt=""/>
             </div>
-            <p class="flex justify-center">
-                Blog Post Summary
-            </p>
+            <div class="flex flex-col justify-center">
+                <header class="text-2xl">{frontmatter.title}</header>
+                <p>{frontmatter.description}</p>
+            </div>
             <div>
                 <ul class="flex flex-wrap">
-                    {tags.map((tag)=>{
+                    {frontmatter.tags.map((tag)=>{
                         return <li class="p-1 m-2 border-2 border-black rounded-xl">{tag}</li>
                     })}
                 </ul>

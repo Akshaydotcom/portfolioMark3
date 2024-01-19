@@ -2,6 +2,7 @@
 import { Image } from "astro:assets"
 import image1 from '../images/p2.png'
 import download from '../icons/download.svg'
+import pdf from '../../Frontend_Developer_Akshay.pdf'
 ---
 
 <div class="flex justify-end mx-4 mt-5" id="mobile-nav">
@@ -20,7 +21,7 @@ import download from '../icons/download.svg'
     <li class="py-6 px-12"><a href="#Projects">Projects</a></li>
     <li class="py-6 px-12"><a href="#blog">Blog</a></li>
     <li class="py-6 px-12"><a href="#contact">Contact Me</a></li>
-    <button class="py-4 my-2  mx-6 px-5 bg-black rounded text-white flex">Resume <Image src={download} alt="" class="mx-2 invert-color"/></button>
+    <li><a href={pdf} download="Resume_Akshay"><button class="py-4 my-2  mx-6 px-5 bg-black rounded text-white flex">Resume <Image src={download} alt="" class="mx-2 invert-color"/></button></a></li>
     </ul>
 </div>
 

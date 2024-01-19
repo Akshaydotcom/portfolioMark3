@@ -3,6 +3,7 @@ import BlogCard from "../components/BlogCard.astro"
 import Navigation from "../components/Navigation.astro"
 import Footer from "../components/Footer.astro"
 import MobileNavigation from "../components/MobileNavigation.astro"
+const allPosts=await Astro.glob('./posts/*.md')
 ---
 <html>
     <head>
@@ -13,7 +14,7 @@ import MobileNavigation from "../components/MobileNavigation.astro"
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Sora&display=swap" rel="stylesheet">
-		<title>Portfolio-Akshay Bhandary</title>
+		<title>Blogs-Akshay Bhandary</title>
     </head>
     <body>
         <Navigation />
@@ -25,9 +26,9 @@ import MobileNavigation from "../components/MobileNavigation.astro"
             <input type="text" name="search" id="search" placeholder="Enter Keyword Here to Filter" class="w-56 p-2 border border-2 border-black">
         </div>
         </div>
-        <div class="md:grid md:grid-cols-3 xl:grid-cols-4 md:gap-4 md:px-20 pb-12">
-            {[1,2,3,4,5,6,7,8,9].map(()=>{
-                return <BlogCard />
+        <div class="md:grid md:grid-cols-3 xl:grid-cols-2 md:gap-4 md:px-20 pb-12">
+            {allPosts.map((post)=>{
+                return <BlogCard frontmatter={post.frontmatter} url={post.url}/>
             })}
         </div>
         <Footer />
