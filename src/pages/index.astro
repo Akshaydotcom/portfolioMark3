@@ -3,6 +3,7 @@ import Navigation from '../components/Navigation.astro'
 import { Image } from 'astro:assets';
 import image3 from '../images/DALL·E 2024-01-08 22.19.02 - Create a minimalist black and white digital illustration of a person sitting cross-legged on a cushion. The person is focused on working on a modern l.png'
 import image4 from '../images/DALL·E 2024-01-08 22.19.23 - Create a minimalist black and white digital illustration of a person sitting cross-legged on a cushion. The person is focused on working on a modern l.png'
+import arrowRight from '../icons/arrow-right-solid.svg'
 import IconButton from '../components/IconButton.astro';
 import JobSummary from '../components/JobSummary.astro';
 import ProjectSummary from '../components/ProjectSummary.astro';
@@ -39,7 +40,7 @@ const projectObject=[
 		iconFor:'portfolio_v1',
 		githubLink:'https://github.com/Akshaydotcom/portfolio',
 		liveLink:'https://agigabyte.com/',
-		summary:''
+		summary:'The website features a clean, minimalist design, emphasizing ease of navigation and user engagement. It serves as a central hub, presenting my skills, experiences, and a curated selection of projects, demonstrating my proficiency and style in web development. The portfolio is thoughtfully crafted to highlight my technical capabilities and creative prowess, aiming to connect with potential clients and collaborators by providing a thorough insight into my professional journey and accomplishments.'
 	}
 ]
 
@@ -55,6 +56,8 @@ const infy='At Infosys, I led the design and implementation of an investment por
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Akshay Bhandary, a skilled Frontend Developer based in the Bay Area. Explore my project portfolio, including Paper Scissors, Country Finder, and Short The Url. Contact me for collaboration on web development projects involving React, Redux, and more." />
+		<meta name="keywords" content="Akshay Bhandary, Frontend Developer, Bay Area, Web Development, JavaScript, React, HTML, CSS, Python, Redux, Git, Portfolio, Responsive Websites, API Integration, Blog Posts, Full Stack Development" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Sora&display=swap" rel="stylesheet">
@@ -67,7 +70,7 @@ const infy='At Infosys, I led the design and implementation of an investment por
 		<MobileNavigation />
 		<section class="lg:grid lg:gap-16 lg:grid-cols-2 lg:px-20 lg:py-16 md:flex md:flex-row sm:flex sm:flex-row-reverse">
 			<div class="px-8">
-				<p class="text-5xl leading-[56px] font-thin">Hello, I'm <span class="font-extrabold">Akshay Bhandary.</span> Frontend Developer Based in USA</p>
+				<p class="text-5xl leading-[56px] font-thin">Hello, I'm <span class="font-extrabold">Akshay Bhandary.</span> Frontend Developer Based in Bay Area</p>
 				<div class="inline-flex">
 					
 				</div>
@@ -119,12 +122,13 @@ const infy='At Infosys, I led the design and implementation of an investment por
 					return <ProjectSummary projectName={project.name} projectSummary={project.summary} iconFor={project.iconFor} number={index+1} liveLink={project.liveLink} githubLink={project.githubLink}/>
 				})
 			}
-			<div><a href="">Archived Projects</a></div>
+			<div class="flex justify-end text-2xl">
+				<a href="/ArchivedProjects"><span class="text-white flex inline-flex">Archived Projects <Image src={arrowRight} alt="Arrow Right" height={arrowRight.height/20} width={arrowRight.width/20} class='invert-color ml-4'/></span></a></div>
 		</section>
 		<section class="px-4 md:px-20 py-16" id="blog">
 			<header class="text-5xl py-4 flex flex-col md:flex-row md:justify-center">My Blog Posts</header>
-			<div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 md:gap-8 md:justify-evenly py-16">
-				{[1,2,3,4,5].map(()=>{
+			<div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 md:gap-8 md:justify-evenly py-16">
+				{[1,2,3].map(()=>{
 					return <BlogCard />
 				})}
 			</div>

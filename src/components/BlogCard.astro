@@ -1,10 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import icon from '../images/Ellipse 2664.svg'
+const {frontmatter}=Astro.props
 const tags=['Javascript','html','css3','react']
 ---
 
-<div class="p-12 border-black border-2  hover:bg-black hover:rounded-lg hover:text-white">
+<div class="p-4 my-2 mx-4 md:p-8 lg:p-12 border-black border-2  hover:bg-black hover:rounded-lg hover:text-white">
     <a href="/posts/BlogPost1/">
         <div class="grid grid-rows-3 gap-4">
             <div class="flex justify-center">

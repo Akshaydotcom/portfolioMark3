@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import Navigation from "../components/Navigation.astro";
+import MobileNavigation from "../components/MobileNavigation.astro";
+import Footer from "../components/Footer.astro";
+import js1 from '../images/js1.jpg'
+const {frontmatter}=Astro.props
+---
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Sora&display=swap" rel="stylesheet">
+		<title>{frontmatter.title}</title>
+    </head>
+    <body>
+        <Navigation />
+        <MobileNavigation />
+            <main class="flex justify-center">
+                <article>
+                    {frontmatter.tags.map((tag)=>{
+                        return <button class="p-2 m-2 border border-2 border-black rounded bg-black text-white">{tag}</button>
+                    })}
+                    <figure class="flex justify-center">
+                        <Image src={js1} alt="Banner for JavaScript" height={js1.height/4} width={js1.width/4}/>
+                    </figure>
+                    <div class="pt-4 pb-12">
+                        <header class="text-5xl py-4">{frontmatter.title} </header>
+                        <slot/>
+                        <slot name="conclusion">{frontmatter.conclusion}</slot>  
+                    </div>
+                </article>
+            </main>
+        <Footer />
+    </body>
+</html>
+
+<script>
+    import '../scripts/script.js'
+</script>

@@ -1,0 +1,65 @@
+---
+import MobileNavigation from "../components/MobileNavigation.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+
+const ArchiveMap=[
+    {
+        name:"Where's my charger",
+        technologies:[],
+        summary:'Obtained location and trip information data from infrastructure stakeholders. Used INRIX data sources to gather information on most likely location candidates for placing a new charging station. Received Honourable Mention at INRIX Hackathon held in Santa Clara University in November 2022.',
+        githubLink:'',
+        liveLink:''
+    },
+    {
+        name:"Sales & Inventory Management System",
+        technologies:['PL/SQL'],
+        summary:'Designed and implemented a sales and inventory management system where customers could place orders for items available at a Computer Repair Shop. Implemented various PL/SQL procedures and functions that cover functionalities including: creating a customer order, checking availability of items, computing total amount for an order, displaying items of an order, etc',
+        githubLink:'',
+        liveLink:''
+    },
+    {
+        name:"Order Action Modal",
+        technologies:['HTML','CSS','React','Axios'],
+        summary:'Developed a modal component, utilizing React framework for a marketplace application. Implemented functionality to retrieve and display order information from a remote API. Calculated and displayed various financial metrics related to the sale, including selling price, commission, seller fee, and earnings. Integrated acceptance and rejection of sales functionality with corresponding API calls',
+        githubLink:'',
+        liveLink:''
+    },
+]
+---
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Akshay Bhandary, a skilled Frontend Developer based in the Bay Area. Explore my project portfolio, including Paper Scissors, Country Finder, and Short The Url. Contact me for collaboration on web development projects involving React, Redux, and more." />
+		<meta name="keywords" content="Akshay Bhandary, Frontend Developer, Bay Area, Web Development, JavaScript, React, HTML, CSS, Python, Redux, Git, Portfolio, Responsive Websites, API Integration, Blog Posts, Full Stack Development" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Sora&display=swap" rel="stylesheet">
+		<title>Portfolio-Akshay Bhandary</title>
+    </head>
+    <body>
+        <Navigation />
+        <MobileNavigation />
+        <div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 md:gap-8 md:justify-evenly py-16 px-20">
+            {ArchiveMap.map((project)=>{
+                return <div class="border border-2 border-black p-4 hover:bg-black hover:text-white hover:rounded-xl">
+                        <p class="text-3xl py-5">{project.name}</p>
+                        <p>{project.summary}</p>
+                        {project.technologies.length>0 && 
+                            project.technologies.map((tech)=><button class="p-1 m-2 border-2 border-black rounded-xl hover:border-white">{tech}</button>) }
+                    </div>
+            })}
+        </div>
+        
+        <Footer />
+    </body>
+</html>
+
+
+<script>
+    import '../scripts/script.js'
+</script>
