@@ -18,16 +18,16 @@ const imageMap={
 ---
 
 <div class:list={["py-5","md:flex-row","flex-col","flex","md:gap-12 text-white",{"md:flex-row-reverse":flag}]}>
-    <div class="flex justify-self-center self-center p-8 border border-white hover:p-2 md:hover:transition-all ease-out">
-        <Image src={imageMap[iconFor]} alt="" class="h-[14rem] w-[28rem] hover:h-[18rem] hover:w-[32rem] md:hover:transition-all ease-out"/>
+    <div class="flex justify-self-center self-center p-8 border border-white">
+        <a href={liveLink} target="_blank" aria-label="Opens website in a new tab"><Image src={imageMap[iconFor]} alt="" class="h-[14rem] w-[28rem] hover:h-[18rem] hover:w-[32rem] md:hover:transition-all md:hover:ease-out"/></a>
     </div>
     <div class=" md:w-1/2">
         <p class="text-5xl font-extrabold">{String(number).padStart(2,'0')}</p>
         <p class="text-3xl py-8">{projectName}</p>
         <p class="text-xl text-white">{projectSummary}</p>
         <span class="inline-flex pt-2">
-            <a href={liveLink} target="_blank" class="pr-4" aria-label="Opens website in a new tab"><Image src={link} alt="" class='invert'/></a>
-            <a href={githubLink} target="_blank" aria-label="Opens Github Repo of the Project in a new tab"><Image src={github} alt="" class='invert'/></a>
+            <a href={liveLink} target="_blank" class="pr-4" aria-label="Opens website in a new tab"><Image src={link} alt="" class='invert' height={link.height*2}/></a>
+            <a href={githubLink} target="_blank" aria-label="Opens Github Repo of the Project in a new tab"><Image src={github} alt="" class='invert' height={github.height*2}/></a>
         </span>
         
     </div>
