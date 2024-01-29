@@ -24,7 +24,7 @@ const {frontmatter}=Astro.props
             <main class="flex justify-center">
                 <article class="px-20">
                     {frontmatter.tags.map((tag)=>{
-                        return <button class="p-2 m-2 border border-2 border-black rounded bg-black text-white">{tag}</button>
+                        return <button class="p-2 m-2 border border-2 border-black rounded text-black">{tag}</button>
                     })}
                     <figure class="flex justify-center">
                         <Image src={js1} alt="Banner for JavaScript" height={js1.height/3} width={js1.width/3}/>
@@ -45,5 +45,8 @@ const {frontmatter}=Astro.props
 </script>
 
 <style>
-    
+    body{
+		font-family: Sora;
+		background-color: rgba(201, 217, 222, 0.708);
+	}
 </style>
