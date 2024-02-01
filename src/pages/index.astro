@@ -10,6 +10,9 @@ import ProjectSummary from '../components/ProjectSummary.astro';
 import BlogCard from '../components/BlogCard.astro';
 import Footer from '../components/Footer.astro';
 import MobileNavigation from '../components/MobileNavigation.astro';
+import linkedin from '../icons/linkedin.svg'
+import email from '../icons/email.svg'
+import github from '../icons/github.svg'
 const rps="This project is a modern-day version of the classic game Rock Paper Scissors with exciting twists. Built with React and Vanilla CSS, it allows players to view the history of all choices and is fully compatible with both desktop browsers and mobile devices. One of its notable features is the Pro mode, designed for fans of the hit TV Show The Big Bang Theory. With surprises and a sleek design, this game is sure to provide hours of fun for players of all ages."
 const stu ="This is a sleek and user-friendly web application designed to provide quick and efficient URL shortening services. Built as a challenge from FrontendMentor, this project showcases a modern, responsive design achieved using React and the powerful Material-UI framework. The application not only shortens long URLs to make them more manageable but also ensures optimal user experience with its intuitive interface and immediate feedback system. Users can shorten any URL and track their usage, fostering a more convenient and efficient browsing experience."
 const cfinder="This is a web application that provides users with information about all countries in the world. It utilizes the rest-countries API to fetch data and allows users to search and filter countries based on various criteria such as region, language. The application has a user-friendly interface that is optimized for mobile devices and features a dark and light mode for visual customization. The UI is styled using CSS and Bootstrap, while Google Fonts is used to enhance the typography of the application."
@@ -71,8 +74,13 @@ const infy='At Infosys, I led the design and implementation of an investment por
 		<section class="lg:grid lg:gap-16 lg:grid-cols-2 lg:px-20 lg:py-16 md:flex md:flex-row sm:flex sm:flex-row-reverse">
 			<div class="px-8">
 				<p class="text-5xl leading-[56px] font-thin">Hello, I'm <span class="font-extrabold">Akshay Bhandary.</span><br/> <span id="job-title"></span><br/> Based in Bay Area</p>
-				<div class="inline-flex">
-					
+				<div class="inline-flex flex-col text-2xl pt-2 font-thin">
+					Passionate about front-end innovation and full-stack development, I'm eager to bring my expertise to a team that values creativity and technical prowess.
+					<div class="inline-flex flex-row pt-4 pb-4 justify-evenly">
+						<a href="https://www.linkedin.com/in/akshaygb2508" target="_blank"><Image src={linkedin} alt="LinkedIn" width={linkedin.width*2}/></a>
+						<a href="mailto:abhandary@scu.edu"><Image src={email} alt="Email" width={email.width*2}/></a>
+						<a href="https://github.com/Akshaydotcom" target="_blank"><Image src={github} alt="Github" width={github.width*2}/></a>
+				</div>
 				</div>
 			</div>
 			<div class="px-8">
@@ -106,12 +114,13 @@ const infy='At Infosys, I led the design and implementation of an investment por
 				</div>
 				<div>
 					<header class="text-5xl py-4">About Me</header>
-					<p>I am a budding Web Developer with a passion for building awesome-looking websites using ReactJs and Node. With over 3 years of experience in web development, I have worked on a variety of projects with large enterprise applications.
-
-						I specialize in developing responsive, user-friendly, and highly-functional websites using ReactJs, Node, HTML5, CSS3, and JavaScript.
-						Currently a graduate student at Santa Clara University, so if you are looking for a frontend or full-stack developer, I'd love to chat about potential opportunities to work together.
-						
-						When I'm not coding or working, you can find me playing the guitar, modding custom mechanical keyboards or playing video games.</p>
+					<p class="text-2xl ">
+						With a proven track record in web development and specialization in responsive design using ReactJs and Node, I craft seamless user experiences for modern websites. Post-graduation in December 2023, I'm ready to bring my front-end and full-stack expertise to innovative projects.
+					</p>
+					<br/>
+					<p class="text-2xl">
+						Off the clock, I'm a guitarist and gamer, where I fine-tune my creativity and strategic thinking. I'm keen to explore opportunities where my technical skills and inventive spirit can thrive.
+					</p>
 				</div>
 			</div>
 		</section>
@@ -151,9 +160,12 @@ const infy='At Infosys, I led the design and implementation of an investment por
 					</form>
 				</div>
 				<div class="py-4 block">
-					<span class="block text-2xl md:text-5xl py-4">Lets Collab? <span id="waving-hand">👋</span></span>
 					<span class="block text-xxl md:text-5xl py-4">Coffee brews, tunes flow, and love glows – that's the secret sauce of this site!</span>
-					<span class="block text-xl md:text-2xl py-8">akshaybhandaryg1@gmail.com</span>
+					<span class="block text-2xl md:text-5xl py-4">Lets Collab? <span id="waving-hand">👋</span></span>
+					<div class="inline-flex">
+						<Image src={email} alt="email" class="pr-2" width={email.width*2}/>	
+						<span class="block text-xl md:text-2xl py-8">: akshaybhandaryg1@gmail.com</span>
+					</div>
 					<span class="block text-xl md:text-2xl">408-646-2891</span>
 				</div>
 			</div>

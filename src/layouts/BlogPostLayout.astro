@@ -29,7 +29,7 @@ const {frontmatter}=Astro.props
                     <figure class="flex justify-center">
                         <Image src={js1} alt="Banner for JavaScript" height={js1.height/3} width={js1.width/3}/>
                     </figure>
-                    <div class="pt-4 pb-12">
+                    <div class="pt-4 pb-12 custom">
                         <header class="text-5xl py-4">{frontmatter.title} </header>
                         <slot/>
                         <slot name="conclusion">{frontmatter.conclusion}</slot>  
@@ -44,9 +44,33 @@ const {frontmatter}=Astro.props
     import '../scripts/script.js'
 </script>
 
-<style>
+<style is:global>
     body{
 		font-family: Sora;
 		background-color: rgba(201, 217, 222, 0.708);
 	}
+
+    div.custom p{
+        padding-top: 1rem;
+    }
+
+    div.custom h2{
+        font-size: 1.75rem;
+        line-height: 1.25rem;
+        padding-top: 1rem;
+    }
+
+    div.custom pre{
+        padding:0.5rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    div.custom ol, div.custom ul{
+        margin-left:1rem
+    }
+    div.custom ol li, div.custom ul li{
+        list-style-type: disc;
+    }
+
 </style>

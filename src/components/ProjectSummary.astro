@@ -18,8 +18,15 @@ const imageMap={
 ---
 
 <div class:list={["py-5","md:flex-row","flex-col","flex","md:gap-12 text-white",{"md:flex-row-reverse":flag}]}>
-    <div class="flex justify-self-center self-center p-8 border border-white">
-        <a href={liveLink} target="_blank" aria-label="Opens website in a new tab"><Image src={imageMap[iconFor]} alt="" class="h-[14rem] w-[28rem] hover:h-[18rem] hover:w-[32rem] md:hover:transition-all md:hover:ease-out"/></a>
+    <div class="relative flex justify-self-center self-center p-8">
+        <!-- <a href={liveLink} target="_blank" aria-label="Opens website in a new tab"><Image src={imageMap[iconFor]} alt="" class="h-[14rem] w-[28rem] hover:h-[18rem] hover:w-[32rem] md:hover:transition-all md:hover:ease-out"/></a> -->
+        
+            <!-- The absolute positioning will make the image grow over its original space -->
+            <a href={liveLink} target="_blank" aria-label="Opens website in a new tab">
+                <Image src={imageMap[iconFor]} alt="" class="h-[14rem] w-[28rem] hover:h-[18rem] hover:w-[32rem] md:hover:transition-all md:hover:ease-out absolute"/>
+            </a>
+            <!-- Invisible spacer to reserve the space for the enlarged image -->
+            <div class="h-[18rem] w-[32rem]"></div>
     </div>
     <div class=" md:w-1/2">
         <p class="text-5xl font-extrabold">{String(number).padStart(2,'0')}</p>

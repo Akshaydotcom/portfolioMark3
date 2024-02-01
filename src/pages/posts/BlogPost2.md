@@ -8,8 +8,6 @@ tags: ["HTML Page Lifecycle","Browsers Event","Web Development Tips"]
 conclusion: ""
 ---
 
-# Demystifying the Lifecycle Events of an HTML Page
-
 Every web developer should have a solid understanding of the lifecycle events that occur when an HTML page is loaded. These events play a crucial role in ensuring that your web applications function as intended and provide a smooth user experience. In this blog post, we'll delve into the three important lifecycle events and how to harness their power.
 
 ## 1. DOMContentLoaded: The Precursor to Full Page Load
@@ -37,9 +35,7 @@ When a user is leaving your page, the `beforeunload` and `unload` events come in
 - Sending analytics data using `window.addEventListener('unload', () => { navigator.sendBeacon() });`
 - Confirming user exit with `window.onbeforeunload = function() { /* Your confirmation logic here */ };`
 
-### Pro Tip: Event.preventDefault()
-
-Keep in mind that browsers tend to ignore `event.preventDefault()` within these events, so use it judiciously.
+> Pro Tip: Keep in mind that browsers tend to ignore `event.preventDefault()` within these events, so use it judiciously.
 
 ## Understanding readyState
 
