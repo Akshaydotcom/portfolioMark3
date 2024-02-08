@@ -41,12 +41,12 @@ const ArchiveMap=[
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Sora&display=swap" rel="stylesheet">
 		<title>Portfolio-Akshay Bhandary</title>
     </head>
-    <body class="h-[98vh]">
+    <body>
         <Navigation />
         <MobileNavigation />
         <div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 md:gap-8 md:justify-evenly py-16 px-20">
             {ArchiveMap.map((project)=>{
-                return <div class="border border-2 border-black p-4 hover:bg-black hover:text-white hover:rounded-xl">
+                return <div class="border border-2 border-black p-4 hover:bg-black hover:text-white hover:rounded-xl mb-2">
                         <p class="text-3xl py-5">{project.name}</p>
                         <p>{project.summary}</p>
                         {project.technologies.length>0 && 
@@ -54,7 +54,9 @@ const ArchiveMap=[
                     </div>
             })}
         </div>
-        <div class="flex flex-col self-end h-56">
+        <div class="flex flex-col justify-between h-56">
+            <!-- Spacer div below -->
+            <div class=""></div>
         <Footer />
     </div>
     </body>
