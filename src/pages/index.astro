@@ -141,7 +141,7 @@ const infy='At Infosys, I led the design and implementation of an investment por
 			<header class="text-5xl py-4 flex flex-col md:flex-row md:justify-center">My Blog Posts</header>
 			<div class="flex flex-col md:grid md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 md:gap-8 md:justify-evenly py-16">
 				{
-				allPosts.slice(0,3).map((post)=>{
+				allPosts.slice(-3).map((post)=>{
 					return <BlogCard frontmatter={post.frontmatter} url={post.url}/>
 				})}
 			</div>
