@@ -4,7 +4,7 @@ title: 'Speeding Up Page Loading with JavaScript: Defer vs. Async'
 pubDate: 2024-01-18
 description: 'Optimize website speed with JavaScript loading.'
 author: 'Akshay Bhandary'
-tags: ["Website Speed","JavaScript Optimization","Web Performance"]
+tags: ["JavaScript Optimization","Web Performance","Frontend System Design"]
 conclusion: ""
 ---
 
@@ -36,7 +36,3 @@ For more control over script loading, consider dynamically adding scripts to you
 In conclusion, optimizing the loading of JavaScript files is essential for faster web page performance. Choose between `defer` and `async` based on your script's dependencies and execution requirements. And don't forget the option of dynamically loading scripts when you need precise control.
 
 By implementing these techniques, you can enhance your website's speed and provide a seamless user experience for your visitors.
-
----
-
-Feel free to customize and expand upon this short-form blog post as needed for your specific audience and platform. Happy blogging!

@@ -1,8 +1,8 @@
 ---
 import Navigation from '../components/Navigation.astro'
 import { Image } from 'astro:assets';
-import image3 from '../images/DALL·E 2024-01-08 22.19.02 - Create a minimalist black and white digital illustration of a person sitting cross-legged on a cushion. The person is focused on working on a modern l.png'
-import image4 from '../images/DALL·E 2024-01-08 22.19.23 - Create a minimalist black and white digital illustration of a person sitting cross-legged on a cushion. The person is focused on working on a modern l.png'
+import image3 from '../images/AboutMEBGRemoved.png'
+import image4 from '../images/DALL·E 2024-02-07 14.58.17 - Create a minimalistic and aesthetically pleasing illustration of a web developer\'s essential workspace. The scene should have a spacious and well-lit .webp'
 import arrowRight from '../icons/arrow-right-solid.svg'
 import IconButton from '../components/IconButton.astro';
 import JobSummary from '../components/JobSummary.astro';
@@ -13,6 +13,7 @@ import MobileNavigation from '../components/MobileNavigation.astro';
 import linkedin from '../icons/linkedin.svg'
 import email from '../icons/email.svg'
 import github from '../icons/github.svg'
+import mobile from '../icons/mobile-retro-solid.svg'
 const rps="This project is a modern-day version of the classic game Rock Paper Scissors with exciting twists. Built with React and Vanilla CSS, it allows players to view the history of all choices and is fully compatible with both desktop browsers and mobile devices. One of its notable features is the Pro mode, designed for fans of the hit TV Show The Big Bang Theory. With surprises and a sleek design, this game is sure to provide hours of fun for players of all ages."
 const stu ="This is a sleek and user-friendly web application designed to provide quick and efficient URL shortening services. Built as a challenge from FrontendMentor, this project showcases a modern, responsive design achieved using React and the powerful Material-UI framework. The application not only shortens long URLs to make them more manageable but also ensures optimal user experience with its intuitive interface and immediate feedback system. Users can shorten any URL and track their usage, fostering a more convenient and efficient browsing experience."
 const cfinder="This is a web application that provides users with information about all countries in the world. It utilizes the rest-countries API to fetch data and allows users to search and filter countries based on various criteria such as region, language. The application has a user-friendly interface that is optimized for mobile devices and features a dark and light mode for visual customization. The UI is styled using CSS and Bootstrap, while Google Fonts is used to enhance the typography of the application."
@@ -73,7 +74,7 @@ const infy='At Infosys, I led the design and implementation of an investment por
 		<MobileNavigation />
 		<section class="lg:grid lg:gap-16 lg:grid-cols-2 lg:px-20 lg:py-16 md:flex md:flex-row sm:flex sm:flex-row-reverse">
 			<div class="px-8">
-				<p class="text-5xl leading-[56px] font-thin">Hello, I'm <span class="font-extrabold">Akshay Bhandary.</span><br/> <span id="job-title"></span><br/> Based in Bay Area</p>
+				<p class="text-5xl leading-[56px] font-thin">Hello, I'm <span class="font-extrabold">Akshay Bhandary.<span id="waving-hand">👋</span></span><br/> <span id="job-title"></span><br/> Based in Bay Area</p>
 				<div class="inline-flex flex-col text-2xl pt-2 font-thin">
 					Passionate about front-end innovation and full-stack development, I'm eager to bring my expertise to a team that values creativity and technical prowess.
 					<div class="inline-flex flex-row pt-4 pb-4 justify-evenly">
@@ -99,6 +100,8 @@ const infy='At Infosys, I led the design and implementation of an investment por
 					<IconButton iconFor="redux"/>
 					<IconButton iconFor="tailwind"/>
 					<IconButton iconFor="graphQL"/>
+					<IconButton iconFor="materialUi"/>
+					<IconButton iconFor="mysql"/>
 				</div>
 			</div>
 		</section>
@@ -119,7 +122,7 @@ const infy='At Infosys, I led the design and implementation of an investment por
 					</p>
 					<br/>
 					<p class="text-2xl">
-						Off the clock, I'm a guitarist and gamer, where I fine-tune my creativity and strategic thinking. I'm keen to explore opportunities where my technical skills and inventive spirit can thrive.
+						Off the clock, I'm a guitarist, gamer, and keyboard modding enthusiast, where I fine-tune my creativity and strategic thinking. My fascination with the tactile and auditory experience of custom keyboards complements my technical expertise. I'm keen to explore opportunities where my multifaceted technical skills and inventive spirit can thrive.
 					</p>
 				</div>
 			</div>
@@ -164,9 +167,14 @@ const infy='At Infosys, I led the design and implementation of an investment por
 					<span class="block text-2xl md:text-5xl py-4">Lets Collab? <span id="waving-hand">👋</span></span>
 					<div class="inline-flex">
 						<Image src={email} alt="email" class="pr-2" width={email.width*2}/>	
-						<span class="block text-xl md:text-2xl py-8">: akshaybhandaryg1@gmail.com</span>
+						<span class="block text-xl md:text-2xl pt-4 pb-4">: akshaybhandaryg1@gmail.com</span>
 					</div>
-					<span class="block text-xl md:text-2xl">408-646-2891</span>
+					<br/>
+					<div class="inline-flex">
+						<Image src={mobile} alt="retro-mobile" class="pr-2" width={email.width*2}/>
+						<span class="block text-xl md:text-2xl pt-4 pb-4 ">: 408-646-2891</span>
+					</div>
+					
 				</div>
 			</div>
 			

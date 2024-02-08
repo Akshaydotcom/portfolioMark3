@@ -1,14 +1,14 @@
 ---
 import { Image } from "astro:assets";
-import icon from '../images/Ellipse 2664.svg'
+import icon from '../icons/coding-programming-language-svgrepo-com.svg'
 const {frontmatter, url}=Astro.props
 ---
 
-<div class="p-4 my-2 mx-4 md:p-8 lg:p-12 border-black border-2  hover:bg-black hover:rounded-lg hover:text-white">
+<div class="p-4 my-2 mx-4 md:p-8 lg:p-12 border-black border-2  hover:bg-black hover:rounded-lg hover:text-white blog-custom">
     <a href={url}>
         <div class="grid grid-rows-3 gap-4">
             <div class="flex justify-center">
-                <Image src={icon} alt=""/>
+                <Image src={icon} alt="" width={icon.width/5} class="blog-card-icon"/>
             </div>
             <div class="flex flex-col justify-center">
                 <header class="text-2xl">{frontmatter.title}</header>
@@ -25,3 +25,14 @@ const {frontmatter, url}=Astro.props
     
     </a>
 </div>
+
+<style>
+    .blog-custom:hover .blog-card-icon{
+        filter: invert(100%) !important;
+        background-color: white !important; 
+    }
+
+    .blog-custom:hover li{
+        border-color: white;
+    }
+</style>

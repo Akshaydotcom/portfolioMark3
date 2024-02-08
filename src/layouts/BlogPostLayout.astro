@@ -23,17 +23,17 @@ const {frontmatter}=Astro.props
         <MobileNavigation />
             <main class="flex justify-center">
                 <article class="px-20">
-                    {frontmatter.tags.map((tag)=>{
-                        return <button class="p-2 m-2 border border-2 border-black rounded text-black">{tag}</button>
-                    })}
-                    <figure class="flex justify-center">
-                        <Image src={js1} alt="Banner for JavaScript" height={js1.height/3} width={js1.width/3}/>
-                    </figure>
-                    <div class="pt-4 pb-12 custom">
+                    <div class="pt-4 pb-12 custom xl:px-8 xl:pr-12">
                         <header class="text-5xl py-4">{frontmatter.title} </header>
+                        <figure class="flex justify-center">
+                            <Image src={js1} alt="Banner for JavaScript" height={js1.height/3} width={js1.width/3}/>
+                        </figure>
                         <slot/>
                         <slot name="conclusion">{frontmatter.conclusion}</slot>  
                     </div>
+                    {frontmatter.tags.map((tag)=>{
+                        return <button class="p-2 m-2 border border-2 border-black rounded text-black cursor-default bg-white">{tag}</button>
+                    })}
                 </article>
             </main>
         <Footer />
