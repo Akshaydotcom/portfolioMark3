@@ -26,7 +26,7 @@ const {frontmatter}=Astro.props
                     <div class="pt-4 pb-12 custom xl:px-8 xl:pr-12">
                         <header class="text-5xl py-4">{frontmatter.title} </header>
                         <figure class="flex justify-center">
-                            <Image src={js1} alt="Banner for JavaScript" height={js1.height/3} width={js1.width/3}/>
+                            <Image src={js1} alt="Banner for JavaScript" class="md:h-[{$js1.height}/3]" width={js1.width/3}/>
                         </figure>
                         <slot/>
                         <slot name="conclusion">{frontmatter.conclusion}</slot>  
@@ -73,4 +73,9 @@ const {frontmatter}=Astro.props
         list-style-type: disc;
     }
 
+    @media screen and (max-width:640px) {
+        div.custom pre{
+            width:20rem;
+        }
+    }
 </style>
