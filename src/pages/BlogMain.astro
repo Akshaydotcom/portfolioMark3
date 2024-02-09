@@ -27,7 +27,7 @@ const allPosts=await Astro.glob('./posts/*.md')
         </div> -->
         </div>
         <div class="md:grid md:grid-cols-3 xl:grid-cols-2 md:gap-4 md:px-20 pb-12">
-            {allPosts.toReversed().map((post)=>{
+            {allPosts.map((post)=>{
                 return <BlogCard frontmatter={post.frontmatter} url={post.url}/>
             })}
         </div>
