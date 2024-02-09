@@ -12,7 +12,7 @@ In the world of JavaScript programming, promises play a significant role in hand
 
 ## What Are Promises?
 
-Promises in JavaScript are essentially functions that are guaranteed to run immediately and result in either a resolved state or a rejected state. Think of promises as a commitment, much like promising to study for 25 minutes. Until you start studying, the promise is pending. Once you've completed the 25 minutes, the promise is fulfilled. However, if you fail to study for the promised duration, the promise is rejected.
+Promises are objects that represent eventual completion or failure of an asynchronous operation. Think of promises as a commitment, much like promising to study for 25 minutes. Until you start studying, the promise is pending. Once you've completed the 25 minutes, the promise is fulfilled. However, if you fail to study for the promised duration, the promise is rejected.
 
 ## The Promise Constructor
 
