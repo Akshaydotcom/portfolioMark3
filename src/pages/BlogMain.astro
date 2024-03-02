@@ -22,9 +22,6 @@ const allPosts=await Astro.glob('./posts/*.md')
         <header class="text-5xl flex justify-center px-20 py-12">
             My Blog Posts
         </header>
-        <!-- <div class="flex justify-start px-20 pt-6 pb-12">
-            <input type="text" name="search" id="search" placeholder="Enter Keyword Here to Filter" class="w-56 p-2 border border-2 border-black">
-        </div> -->
         </div>
         <div class="md:grid md:grid-cols-3 xl:grid-cols-2 md:gap-4 md:px-20 pb-12">
             {allPosts.map((post)=>{

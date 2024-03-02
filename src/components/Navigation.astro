@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 import image1 from '../images/p2.png'
 import download from '../icons/download.svg'
-import pdf from '../../Software_Developer_FE_Akshay (2).pdf'
+import pdf from '../../Software_Developer_FrontEnd_Akshay.pdf'
 ---
 <ul class="navbar flex items-center justify-between mx-20 my-6 px-8"  id="main-nav">
     <li class=""><a href="/"><Image src={image1} alt="" width={image1.width/10}/></a></li>
@@ -11,7 +11,7 @@ import pdf from '../../Software_Developer_FE_Akshay (2).pdf'
     <li class=""><a href="/#Projects">Projects</a></li>
     <li class=""><a href="/#blog">Blog</a></li>
     <li class=""><a href="/#contact">Contact Me</a></li>
-    <li><a href={pdf} download="Resume_Akshay"><button class="py-4 px-5 bg-black rounded text-white flex">Resume <Image src={download} alt=""/></button></a></li>
+    <li><a href={pdf} target="_blank"><button class="py-4 px-5 bg-black rounded text-white flex">Resume <Image src={download} alt=""/></button></a></li>
 </ul>
 
 <style>
