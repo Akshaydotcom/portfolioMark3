@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: 'Demystifying the Lifecycle Events of an HTML Page'
+filename: 'BlogPost2.md'
 pubDate: 2024-01-18
 description: 'Master the HTML page lifecycle events for efficient web development'
 author: 'Akshay Bhandary'

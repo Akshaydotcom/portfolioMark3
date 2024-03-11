@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: 'JavaScript: Unveiling the Power and Limitations'
+filename: 'BlogPost1.md'
 pubDate: 2024-01-18
 description: 'Discover JavaScript basics, limitations, and more in this insightful post'
 author: 'Akshay Bhandary'

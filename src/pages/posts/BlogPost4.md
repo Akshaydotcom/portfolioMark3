@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: 'Unraveling the Magic of Promises: A Journey into Asynchronous JavaScript'
+filename: 'BlogPost4.md'
 pubDate: 2024-02-08
 description: 'Master JavaScript promises for efficient asynchronous operations.'
 author: 'Akshay Bhandary'
