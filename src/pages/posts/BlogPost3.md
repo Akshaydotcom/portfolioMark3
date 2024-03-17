@@ -3,7 +3,7 @@ layout: ../../layouts/BlogPostLayout.astro
 title: 'Speeding Up Page Loading with JavaScript: Defer vs. Async'
 filename: "BlogPost3.md"
 pubDate: 2024-01-18
-description: 'Optimize website speed with JavaScript loading.'
+description: "Enhance your website's loading speed and user experience with our expert insights on optimizing JavaScript file handling. Learn the strategic use of `defer` and `async` attributes to manage script loading efficiently, understand their differences, and discover how to dynamically load scripts for optimal performance. Dive into our guide to make informed decisions and implement best practices in your web development projects for faster, more responsive sites."
 author: 'Akshay Bhandary'
 tags: ["JavaScript Optimization","Web Performance","Frontend System Design"]
 conclusion: ""

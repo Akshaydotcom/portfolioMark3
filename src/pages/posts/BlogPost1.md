@@ -3,7 +3,7 @@ layout: ../../layouts/BlogPostLayout.astro
 title: 'JavaScript: Unveiling the Power and Limitations'
 filename: 'BlogPost1.md'
 pubDate: 2024-01-18
-description: 'Discover JavaScript basics, limitations, and more in this insightful post'
+description: 'Dive into the world of JavaScript with our insightful blog post, highlighting key limitations and foundational concepts essential for developers. Discover practical tips on script placement, strict mode usage, and variable management to enhance your web development skills. Learn, optimize, and become proficient in JavaScript—click to explore more!'
 author: 'Akshay Bhandary'
 tags: ["JavaScript Basics", "Web Development Tips", "JavaScript Limitations"]
 conclusion: ""
