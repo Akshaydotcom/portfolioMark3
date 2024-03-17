@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../../layouts/BlogPostLayout.astro
 title: 'Speeding Up Page Loading with JavaScript: Defer vs. Async'
 filename: "BlogPost3.md"
 pubDate: 2024-01-18

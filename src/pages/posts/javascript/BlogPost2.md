@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../../layouts/BlogPostLayout.astro
 title: 'Demystifying the Lifecycle Events of an HTML Page'
 filename: 'BlogPost2.md'
 pubDate: 2024-01-18

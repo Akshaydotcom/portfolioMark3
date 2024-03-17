@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../../layouts/BlogPostLayout.astro
 title: 'JavaScript: Unveiling the Power and Limitations'
 filename: 'BlogPost1.md'
 pubDate: 2024-01-18
