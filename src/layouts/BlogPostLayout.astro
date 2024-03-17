@@ -1,10 +1,38 @@
 ---
-import { Image } from "astro:assets";
 import Navigation from "../components/Navigation.astro";
 import MobileNavigation from "../components/MobileNavigation.astro";
 import Footer from "../components/Footer.astro";
-import js1 from '../images/js1.jpg'
+import {createApi} from 'unsplash-js'
 const {frontmatter}=Astro.props
+const api = createApi({
+  accessKey: import.meta.env.UNSPLASH_API_KEY
+});
+const imagedata=await api.photos.getRandom({
+    query:"JavaScript",
+    orientation:"landscape",
+})
+let image, photographer_username, photographer_name;
+interface ImageDataResponse {
+    urls: {
+        regular: string;
+    };
+    user: {
+        username: string;
+        name: string;
+    };
+}
+
+if (Array.isArray(imagedata.response)) {
+    const firstItem = imagedata.response[0] as ImageDataResponse; 
+    image = firstItem.urls.regular;
+    photographer_username = firstItem.user.username;
+    photographer_name = firstItem.user.name;
+} else {
+    const responseData = imagedata.response as ImageDataResponse;
+    image = responseData.urls.regular;
+    photographer_username = responseData.user.username;
+    photographer_name = responseData.user.name;
+}
 ---
 
 <html>
@@ -25,12 +53,32 @@ const {frontmatter}=Astro.props
                 <article class="px-20">
                     <div class="pt-4 pb-12 custom xl:px-8 xl:pr-12">
                         <header class="text-5xl py-4">{frontmatter.title} </header>
-                        <figure class="flex justify-center">
-                            <Image src={js1} alt="Banner for JavaScript" class="md:h-[{$js1.height}/3]" width={js1.width/3}/>
+                        <figure class="flex flex-col justify-center">
+                            <img src={image} alt="Banner for JavaScript"/>
+                            <figcaption class="ml-[35%]">Photo by <a href=`https://unsplash.com/@${photographer_username}?utm_source=name&utm_medium=referral`>{photographer_name}</a> on <a href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral">Unsplash</a></figcaption>
                         </figure>
                         <slot/>
                         <slot name="conclusion">{frontmatter.conclusion}</slot>  
                     </div>
+                    <!-- <div class="xl:px-8 xl:pr-12 flex justify-start">
+                        {(feedbacks.filter((feedback)=>feedback.blogPost==frontmatter.filename).map((feedback)=>{
+                            return <div class="inline-block border border-black border-2 pt-4 pb-4 xl:px-8 xl:py-6 mr-4">
+                            
+                            <div class="flex inline-flex"><Image src={person} alt="person" height={person.height/20}/><span class="px-2">{feedback.name} Says:</span></div>
+                            <p>{feedback.time.toDateString()}</p>
+                            <p>{feedback.feedback}</p>
+                        
+                    </div>}))}
+                    </div>
+                    <div class="pt-4 pb-12 xl:px-8 xl:pr-12 flex justify-start">
+                        <div class="block">
+                        <div class="text-2xl py-4">Leave a Feedback</div>
+                        <textarea rows="3" cols="30" placeholder="Write a comment..." name="feedbackText" id="feedback" class="mt-2 mb-2"/>
+                        <hr/>
+                        <button class="py-4 px-5 bg-black rounded text-white">Connect With Me</button>
+                        <button class="py-4 px-5 bg-black rounded text-white" id="addFeedBack">Leave Feedback</button>
+                        </div>
+                    </div> -->
                     {frontmatter.tags.map((tag)=>{
                         return <button class="p-2 m-2 border border-2 border-black rounded text-black cursor-default bg-white">{tag}</button>
                     })}
@@ -43,6 +91,25 @@ const {frontmatter}=Astro.props
 <script>
     import '../scripts/script.js'
 </script>
+
+<!-- <script>
+    import { feedbacks } from "../feedbacks/feedback";
+        
+    document.getElementById('addFeedBack').addEventListener('click',()=>{
+        console.log('inside click handler')
+        let text=document.getElementById('feedback');
+        let time=new Date();
+        const feedbackObject={
+            "name":"Visitor",
+            "time":time,
+            "blogPost":"BlogPost2.md",
+            "feedback":text.textContent
+        }
+        console.log(feedbacks)
+        console.log(feedbackObject)
+        feedbacks.push(feedbackObject)
+    })
+</script> -->
 
 <style is:global>
     body{
@@ -71,6 +138,12 @@ const {frontmatter}=Astro.props
     }
     div.custom ol li, div.custom ul li{
         list-style-type: disc;
+    }
+
+    div.custom img{
+        height: 600px;
+        width:700px;
+        margin-left: 35%;
     }
 
     @media screen and (max-width:640px) {
