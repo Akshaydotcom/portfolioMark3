@@ -1,38 +1,22 @@
 ---
+import { Image } from "astro:assets";
 import Navigation from "../components/Navigation.astro";
 import MobileNavigation from "../components/MobileNavigation.astro";
 import Footer from "../components/Footer.astro";
+import js1 from '../images/js1.jpg'
 import {createApi} from 'unsplash-js'
 const {frontmatter}=Astro.props
 const api = createApi({
   accessKey: import.meta.env.UNSPLASH_API_KEY
 });
-// const imagedata=await api.photos.getRandom({
-//     query:"JavaScript",
-//     orientation:"landscape",
-// })
-// let image, photographer_username, photographer_name;
-// interface ImageDataResponse {
-//     urls: {
-//         regular: string;
-//     };
-//     user: {
-//         username: string;
-//         name: string;
-//     };
-// }
-
-// if (Array.isArray(imagedata.response)) {
-//     const firstItem = imagedata.response[0] as ImageDataResponse; 
-//     image = firstItem.urls.regular;
-//     photographer_username = firstItem.user.username;
-//     photographer_name = firstItem.user.name;
-// } else {
-//     const responseData = imagedata.response as ImageDataResponse;
-//     image = responseData.urls.regular;
-//     photographer_username = responseData.user.username;
-//     photographer_name = responseData.user.name;
-// }
+const imagedata=await api.photos.getRandom({
+    query:"JavaScript",
+    orientation:"landscape",
+    count:1
+})
+const image=imagedata.response[0].urls.regular
+const photographer_username=imagedata.response[0].user.username
+const photographer_name=imagedata.response[0].user.name
 ---
 
 <html>
@@ -53,10 +37,10 @@ const api = createApi({
                 <article class="px-20">
                     <div class="pt-4 pb-12 custom xl:px-8 xl:pr-12">
                         <header class="text-5xl py-4">{frontmatter.title} </header>
-                        <!-- <figure class="flex flex-col justify-center">
+                        <figure class="flex flex-col justify-center">
                             <img src={image} alt="Banner for JavaScript"/>
                             <figcaption class="ml-[35%]">Photo by <a href=`https://unsplash.com/@${photographer_username}?utm_source=name&utm_medium=referral`>{photographer_name}</a> on <a href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral">Unsplash</a></figcaption>
-                        </figure> -->
+                        </figure>
                         <slot/>
                         <slot name="conclusion">{frontmatter.conclusion}</slot>  
                     </div>
