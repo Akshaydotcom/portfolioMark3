@@ -9,14 +9,28 @@ const {frontmatter}=Astro.props
 const api = createApi({
   accessKey: import.meta.env.UNSPLASH_API_KEY
 });
-const imagedata=await api.photos.getRandom({
-    query:"JavaScript",
-    orientation:"landscape",
+
+let image, photographer_username, photographer_name
+try {
+  const imagedata = await api.photos.getRandom({
+    query: "JavaScript",
+    orientation: "landscape",
     count:1
-})
-const image=imagedata.response[0].urls.regular
-const photographer_username=imagedata.response[0].user.username
-const photographer_name=imagedata.response[0].user.name
+  });
+
+  if (imagedata.type === 'success' && imagedata.response && imagedata.response[0].urls) {
+    image = imagedata.response[0].urls.regular;
+    photographer_username = imagedata.response[0].user.username;
+    photographer_name = imagedata.response[0].user.name;
+  } else {
+    // Log error or set fallbacks if the response is not successful or structured as expected
+    console.error('Unsplash API did not return the expected data structure:', imagedata);
+    // Implement your logic to handle this scenario, like setting default values or showing an error message
+  }
+} catch (error) {
+  console.error('Error fetching image from Unsplash:', error);
+  // Implement your logic to handle this scenario, like setting default values or showing an error message
+}
 ---
 
 <html>
