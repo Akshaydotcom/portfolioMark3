@@ -19,6 +19,12 @@ const stu ="This is a sleek and user-friendly web application designed to provid
 const cfinder="This is a web application that provides users with information about all countries in the world. It utilizes the rest-countries API to fetch data and allows users to search and filter countries based on various criteria such as region, language. The application has a user-friendly interface that is optimized for mobile devices and features a dark and light mode for visual customization. The UI is styled using CSS and Bootstrap, while Google Fonts is used to enhance the typography of the application."
 const projectObject=[
 	{
+		name:'LingoPy',
+		iconFor:'lingoPy',
+		githubLink: "https://github.com/Akshaydotcom/Python-i18n-Project",
+		summary:'LingoPy is an advanced desktop application designed to revolutionize web development localization by automating the translation process for multilingual content creation. Utilizing OpenAI\'s powerful GPT-3.5 API, LingoPy enables developers to efficiently produce content in various languages, enhancing the accessibility of web applications across global markets. The application is built with a user-friendly, tkinter-based graphical user interface, which simplifies the entire localization workflow. Users can easily specify the source and destination folders for their web projects, choose the target language for translation, and enter their API key to integrate with OpenAI’s service. Once set up, the app initiates the translation process with a single click, displaying a progress bar to indicate the ongoing operation.'
+	},
+	{
 		name:'Rock Paper Scissors',
 		iconFor:'rps',
 		githubLink:'https://github.com/Akshaydotcom/rock-paper-scissor',
@@ -48,10 +54,11 @@ const projectObject=[
 	}
 ]
 const allPosts=await Astro.glob('./posts/javascript/*.md')
-const chera='At Chera Health, I enhanced user experience by integrating a React.JS-based address update feature, leading to positive user feedback. I also implemented a GPT-3.5 powered chat interface, achieving 95% query accuracy and 40% faster response times, and developed test cases that significantly improved API reliability.'
+const chera='At Chera Health, I implemented a user-friendly and responsive web-based chat interface, increasing query accuracy to 95% and accelerating response times by 40%, leveraging Python and OpenAI’s GPT-3.5 API. I modified the Chera Health website to include an "update address" feature, enhancing user satisfaction through seamless integration using my expertise in ReactJS and user-centric design principles. Additionally, I developed and executed comprehensive test cases for API functionality, achieving high-quality performance and reliability with zero critical bugs in post-deployment checks, applying my knowledge in software testing and QA methodologies.'
 
 const infy='At Infosys, I led the design and implementation of an investment portfolio management dashboard for UBS using React, JavaScript, and Redux, significantly enhancing operational efficiency. My key roles included integrating Java-based REST APIs to streamline system performance and automating test processes with Jest, which considerably reduced manual testing efforts and improved accuracy. I also revitalized the UI of a client’s web application, leading to increased user engagement. My collaborative efforts were showcased in my work with QA testers, conducting extensive testing across multiple applications and mentoring new team members. Additionally, I developed a Java automation script for HTML change reports, greatly optimizing weekly workflows and team communication.'
 
+const SCU='At Santa Clara University, I optimized mobile app performance by achieving a 15% increase in app speed and enhancing user engagement through improved responsiveness and efficiency. I implemented Figma screens with React Native and conducted meticulous code optimization and testing. I also led a cross-functional team to streamline backend API integration, achieving a 20% reduction in data retrieval times and enhancing the app’s real-time functionality. Additionally, I instituted robust error-handling and debugging processes for mobile development, decreasing app crash rates by 30% and elevating overall app stability and user trust.'
 ---
 
 <html lang="en">
@@ -107,8 +114,10 @@ const infy='At Infosys, I led the design and implementation of an investment por
 		</section>
 		<section class="px-4 bg-black md:px-20 py-16">
 			<header class="text-white text-5xl py-4 flex justify-center">My Experience</header>
+			<JobSummary companyName="Santa Clara University" title="Front-End Developer" startDate="Nov 2023" endDate="Present" desc={SCU} iconFor="chera"/>
 			<JobSummary companyName="Chera Health LLC" title="Software Engineer Intern" startDate="July 2023" endDate="Sept 2023" desc={chera} iconFor="chera"/>
 			<JobSummary companyName="Infosys" title="Front-End Developer" startDate="June 2018" endDate="Dec 2021" desc={infy} iconFor="infosys"/>
+			
 		</section>
 		<section class="px-4 md:px-20 py-16" id="aboutMe">
 			<div class="flex flex-col md:grid md:gap-4 md:grid-cols-2">
