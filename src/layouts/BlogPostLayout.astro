@@ -54,7 +54,7 @@ try {
                         <header class="text-5xl py-4">{frontmatter.title} </header>
                         <figure class="flex flex-col justify-center">
                             <img src={image} alt="Banner for JavaScript"/>
-                            <figcaption class="ml-[35%]">Photo by <a href=`https://unsplash.com/@${photographer_username}?utm_source=name&utm_medium=referral`>{photographer_name}</a> on <a href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral">Unsplash</a></figcaption>
+                            <figcaption class="ml-[25%]">Photo by <a href=`https://unsplash.com/@${photographer_username}?utm_source=name&utm_medium=referral`>{photographer_name}</a> on <a href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral">Unsplash</a></figcaption>
                         </figure>
                         <slot/>
                         <slot name="conclusion">{frontmatter.conclusion}</slot>  
@@ -142,7 +142,7 @@ try {
     div.custom img{
         height: 600px;
         width:700px;
-        margin-left: 35%;
+        margin-left: 25%;
     }
 
     @media screen and (max-width:640px) {
