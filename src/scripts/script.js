@@ -6,4 +6,3 @@ window.innerWidth>900?
     document.getElementById('mobile-nav').classList.add('hidden')
     :document.getElementById('main-nav').classList.add('hidden')
   
-console.log(window.innerWidth)
