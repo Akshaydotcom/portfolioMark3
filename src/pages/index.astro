@@ -95,7 +95,13 @@ const SCU='At Santa Clara University, I optimized mobile app performance by achi
 				<Image src={image4} alt=''/>
 			</div>
 		</section>
-		<section class="md:px-20 py-12" id="skills">
+		<section class="bg-black md:px-20 py-12 text-white">
+			<header class="text-5xl py-4 flex justify-center">My Experience</header>
+			<JobSummary companyName="Santa Clara University" title="Front-End Developer" startDate="Nov 2023" endDate="Present" desc={SCU} iconFor="scu"/>
+			<JobSummary companyName="Chera Health LLC" title="Software Engineer Intern" startDate="July 2023" endDate="Sept 2023" desc={chera} iconFor="chera"/>
+			<JobSummary companyName="Infosys" title="Front-End Developer" startDate="June 2018" endDate="Dec 2021" desc={infy} iconFor="infosys"/>
+		</section>
+		<section class="px-4  md:px-20 py-16 text-black" id="skills">
 			<header class="lg:text-5xl md:text-2xl py-4 flex justify-center">My <span class="font-extrabold pl-2">Skills</span></header>
 			<div class="px-4 md:px-8 py-16">
 				<div class="grid gap-2 grid-cols-2 xl:grid xl:gap-8 xl:grid-cols-6 lg:grid lg:gap-8 lg:grid-cols-5 md:grid md:gap-4 md:grid-cols-3">
@@ -113,14 +119,17 @@ const SCU='At Santa Clara University, I optimized mobile app performance by achi
 				</div>
 			</div>
 		</section>
-		<section class="px-4 bg-black md:px-20 py-16">
-			<header class="text-white text-5xl py-4 flex justify-center">My Experience</header>
-			<JobSummary companyName="Santa Clara University" title="Front-End Developer" startDate="Nov 2023" endDate="Present" desc={SCU} iconFor="scu"/>
-			<JobSummary companyName="Chera Health LLC" title="Software Engineer Intern" startDate="July 2023" endDate="Sept 2023" desc={chera} iconFor="chera"/>
-			<JobSummary companyName="Infosys" title="Front-End Developer" startDate="June 2018" endDate="Dec 2021" desc={infy} iconFor="infosys"/>
-			
+		<section class="bg-black px-4 md:px-20 py-16" id="Projects">
+			<header class="md:text-5xl py-4 flex justify-center text-white">My Projects</header>
+			{
+				projectObject.map((project, index)=>{
+					return <ProjectSummary projectName={project.name} projectSummary={project.summary} iconFor={project.iconFor} number={index+1} liveLink={project.liveLink} githubLink={project.githubLink}/>
+				})
+			}
+			<div class="flex justify-end text-2xl">
+				<a href="/ArchivedProjects" target="_blank"><span class="text-white flex inline-flex">Archived Projects <Image src={arrowRight} alt="Arrow Right" height={arrowRight.height/20} width={arrowRight.width/20} class='invert ml-4'/></span></a></div>
 		</section>
-		<section class="px-4 md:px-20 py-16" id="aboutMe">
+		<section class="px-4 md:px-20 py-16 text-black" id="aboutMe">
 			<div class="flex flex-col md:grid md:gap-4 md:grid-cols-2">
 				<div class="ml-8">
 					<Image src={image3} alt='' height={image3.height/3.5} width={image3.width/2}/>
@@ -137,16 +146,7 @@ const SCU='At Santa Clara University, I optimized mobile app performance by achi
 				</div>
 			</div>
 		</section>
-		<section class="bg-black px-4 md:px-20 py-16" id="Projects">
-			<header class="md:text-5xl py-4 flex justify-center text-white">My Projects</header>
-			{
-				projectObject.map((project, index)=>{
-					return <ProjectSummary projectName={project.name} projectSummary={project.summary} iconFor={project.iconFor} number={index+1} liveLink={project.liveLink} githubLink={project.githubLink}/>
-				})
-			}
-			<div class="flex justify-end text-2xl">
-				<a href="/ArchivedProjects" target="_blank"><span class="text-white flex inline-flex">Archived Projects <Image src={arrowRight} alt="Arrow Right" height={arrowRight.height/20} width={arrowRight.width/20} class='invert-color ml-4'/></span></a></div>
-		</section>
+		
 		<section class="px-4 md:px-20 py-16" id="blog">
 			<header class="text-5xl py-4 flex flex-col md:flex-row md:justify-center">My Blog Posts</header>
 			<div class="flex flex-col md:grid md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 md:gap-8 md:justify-evenly py-16">
