@@ -1,16 +1,16 @@
 ---
 import { Image } from "astro:assets";
+import person from '../icons/user-regular.svg'
 import Navigation from "../components/Navigation.astro";
 import MobileNavigation from "../components/MobileNavigation.astro";
 import Footer from "../components/Footer.astro";
-import js1 from '../images/js1.jpg'
 import {createApi} from 'unsplash-js'
 const {frontmatter}=Astro.props
 const api = createApi({
   accessKey: import.meta.env.UNSPLASH_API_KEY
 });
 
-let image, photographer_username, photographer_name
+let image, photographer_username, photographer_name, timeToRead
 try {
   const imagedata = await api.photos.getRandom({
     query: "JavaScript",
@@ -23,14 +23,18 @@ try {
     photographer_username = imagedata.response[0].user.username;
     photographer_name = imagedata.response[0].user.name;
   } else {
-    // Log error or set fallbacks if the response is not successful or structured as expected
     console.error('Unsplash API did not return the expected data structure:', imagedata);
-    // Implement your logic to handle this scenario, like setting default values or showing an error message
   }
 } catch (error) {
   console.error('Error fetching image from Unsplash:', error);
-  // Implement your logic to handle this scenario, like setting default values or showing an error message
 }
+
+function readTimeEstimate(){
+    const wordCount=Astro.props.rawContent().split(/\s+/).length;
+    timeToRead=Math.ceil(wordCount/225);
+}
+
+readTimeEstimate()
 ---
 
 <html>
@@ -52,7 +56,14 @@ try {
                 <article class="px-20">
                     <div class="pt-4 pb-12 custom xl:px-8 xl:pr-12">
                         <header class="text-5xl py-4">{frontmatter.title} </header>
-                        <figure class="flex flex-col justify-center">
+                        <!-- <div class="flex inline-flex items-baseline">
+                            <Image src={person} alt="person" height={person.height/20}/>
+                            <span>{frontmatter.author}</span>
+                        </div> -->
+                        <div class="flex justify-between">
+                            <span>{timeToRead} mins read</span>
+                        <span>Published On: {new Date(frontmatter.pubDate).toDateString()}</span></div>
+                        <figure class="flex flex-col justify-center banner">
                             <img src={image} alt="Banner for JavaScript"/>
                             <figcaption class="ml-[25%]">Photo by <a href=`https://unsplash.com/@${photographer_username}?utm_source=name&utm_medium=referral`>{photographer_name}</a> on <a href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral">Unsplash</a></figcaption>
                         </figure>
@@ -116,7 +127,7 @@ try {
 		background-color: rgba(201, 217, 222, 0.708);
 	}
 
-    div.custom p{
+    div.custom:first-child p{
         padding-top: 1rem;
     }
 
@@ -139,7 +150,7 @@ try {
         list-style-type: disc;
     }
 
-    div.custom img{
+    div.custom .banner img{
         height: 600px;
         width:700px;
         margin-left: 25%;
