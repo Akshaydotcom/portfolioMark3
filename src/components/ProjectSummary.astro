@@ -17,31 +17,46 @@ const imageMap={
     'lingoPy':lingoPy
 }
 
----
+const summaryMap={
+    'rps':'This project is a modern React-based version of Rock Paper Scissors with Pro mode inspired by The Big Bang Theory, featuring gameplay history and compatibility across desktop and mobile devices.',
+    'cfinder':'This web app offers global country info with search and filter options, mobile optimization, dark/light mode, and styling with CSS, Bootstrap, and Google Fonts.',
+    'stu':'This sleek and user-friendly web application, built with React and Material-UI, offers efficient URL shortening and tracking with a modern, responsive design and intuitive interface.',
+    'portfolio_v1':'The website features a clean, minimalist design, showcasing my skills, experiences, and projects to highlight my web development proficiency and connect with potential clients and collaborators.',
+    'lingoPy':'LingoPy is a desktop app that automates multilingual web content translation using OpenAI\'s GPT-3.5 API, featuring a simple tkinter GUI for streamlined localization.',
+}
 
-<div class:list={["py-5","md:flex-row","flex-col","flex","md:gap-12 text-white","gap-60",{"md:flex-row-reverse":flag}]}>
-    <div class="md:relative md:flex md:justify-self-center md:self-center md:p-8 ">
-        <!-- <a href={liveLink} target="_blank" aria-label="Opens website in a new tab"><Image src={imageMap[iconFor]} alt="" class="h-[14rem] w-[28rem] hover:h-[18rem] hover:w-[32rem] md:hover:transition-all md:hover:ease-out"/></a> -->
-            <a href={liveLink} target="_blank" aria-label="Opens website in a new tab">
-                <Image src={imageMap[iconFor]} alt="" class="h-[12rem] w-[20rem] md:h-[12rem] md:w-[24rem] md:hover:h-[18rem] md:hover:w-[32rem] md:hover:transition-all md:hover:ease-out absolute"/>
-            </a>
-            <div class="md:h-[18rem] md:w-[32rem]"></div>
-    </div>
-    <div class="text-white md:w-1/2">
-        <p class=" text-5xl font-extrabold">{String(number).padStart(2,'0')}</p>
-        <p class="text-3xl py-8">{projectName}</p>
-        <p class="text-xl">{projectSummary}</p>
+---
+<div class="h-[16rem] bg-contain bg-no-repeat bg-center hoverClass" style=`background-image: url(${imageMap[iconFor].src});`>
+    <div class="text-white md:w-3/4 sm:w-1/2">
+        <p class="text-xs">{summaryMap[iconFor]}</p>
         <span class="inline-flex pt-2">
-            <a href={liveLink} target="_blank" class="pr-4" aria-label="Opens website in a new tab"><Image src={link} alt=""  height={link.height*2}/></a>
-            <a href={githubLink} target="_blank" aria-label="Opens Github Repo of the Project in a new tab"><Image src={github} alt=""  height={github.height*2}/></a>
+            <a href={liveLink} target="_blank" class="pr-4" aria-label="Opens website in a new tab"><Image src={link} alt=""  height={link.height*1.5} class='invert'/></a>
+            <a href={githubLink} target="_blank" aria-label="Opens Github Repo of the Project in a new tab"><Image src={github} alt=""  height={github.height*1.5} class='invert'/></a>
         </span>
-        
     </div>
 </div>
+
 
 <style>
     img.invert{
         filter: invert(100%) !important;
-    background-color: white !important; 
+        background-color: white !important; 
     }
+
+    .hoverClass:hover{
+        background-repeat: no-repeat;
+        background-image: none !important;
+        background-position: center;
+    }
+
+    .hoverClass:hover div{
+        display: inline-block;
+        margin-top: 4em;
+        margin-left:4em
+    }
+
+    .hoverClass div{
+        display: none;
+    }
+
 </style>

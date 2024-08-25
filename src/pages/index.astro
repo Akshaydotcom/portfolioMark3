@@ -121,11 +121,14 @@ const SCU='At Santa Clara University, I optimized mobile app performance by achi
 		</section>
 		<section class="bg-black px-4 md:px-20 py-16" id="Projects">
 			<header class="md:text-5xl py-4 flex justify-center text-white">My Projects</header>
-			{
-				projectObject.map((project, index)=>{
-					return <ProjectSummary projectName={project.name} projectSummary={project.summary} iconFor={project.iconFor} number={index+1} liveLink={project.liveLink} githubLink={project.githubLink}/>
-				})
-			}
+			<div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols gap-2">
+				{
+					projectObject.map((project, index)=>{
+						return <ProjectSummary projectName={project.name} projectSummary={project.summary} iconFor={project.iconFor} number={index+1} liveLink={project.liveLink} githubLink={project.githubLink}/>
+					})
+				}
+			</div>
+			
 			<div class="flex justify-end text-2xl">
 				<a href="/ArchivedProjects" target="_blank"><span class="text-white flex inline-flex">Archived Projects <Image src={arrowRight} alt="Arrow Right" height={arrowRight.height/20} width={arrowRight.width/20} class='invert ml-4'/></span></a></div>
 		</section>
