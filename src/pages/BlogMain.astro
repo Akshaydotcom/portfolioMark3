@@ -4,6 +4,9 @@ import Navigation from "../components/Navigation.astro"
 import Footer from "../components/Footer.astro"
 import MobileNavigation from "../components/MobileNavigation.astro"
 const allPosts=await Astro.glob('./posts/javascript/*.md')
+const set1=new Set();
+allPosts.map((post)=>{post.frontmatter.tags.forEach((tag)=>set1.add(tag))})
+const allTags=Array.from(set1);
 ---
 <html>
     <head>
@@ -23,6 +26,11 @@ const allPosts=await Astro.glob('./posts/javascript/*.md')
             My Blog Posts
         </header>
         </div>
+        <!-- <div class="flex px-20 py-12">
+            <select class="mx-5 mx-5 px-5 py-5">
+                {allTags.map((tag)=>{return <option>{tag}</option>})}
+            </select>
+        </div> -->
         <div class="md:grid md:grid-cols-3 xl:grid-cols-2 md:gap-4 md:px-20 pb-12">
             {allPosts.map((post)=>{
                 return <BlogCard frontmatter={post.frontmatter} url={post.url}/>
